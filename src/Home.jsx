@@ -2,14 +2,20 @@ import React from 'react'
 import Sidebar from './Components/Sidebar'
 import Mainbar from './Components/Mainbar'
 import Monthlist from './Components/monthlist'
+import { BrowserRouter,Route,Routes } from 'react-router-dom'
 const Home = () => {
 
     return (
-        <div className='flex bg-slate-100'>
+        <BrowserRouter >
+         <div className='flex bg-slate-100'>
             <Sidebar />
-            {/* <Mainbar /> */}
-            <Monthlist />
+            <Routes>
+                <Route path='/' element={<Monthlist />} ></Route>
+                <Route path='/month' element={<Mainbar />}></Route>
+            </Routes>
         </div>
+        </BrowserRouter>
+       
     )
 }
 
