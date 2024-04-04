@@ -51,11 +51,10 @@ const Sidebar = () => {
         <div className={`h-screen flex relative  ${menu ? 'ml-0' : '-ml-64'} transition-all duration-1000`} >
             <div className='relative border rounded-r-[20px] h-[100vh] w-[250px] p-2 bg-white'>
                 <div className=' relative text-center p-[10px] mb-5'>
-                    <div className='flex items-center'>
-                        <TiWorld size={'30px'}/>
-                        <h1 className='font-bold text-[20px]' > World Model Hunt</h1>
+                <div className='flex items-center' >
+                        <TiWorld size={"30px"} />
+                        <h1 className='font-bold text-[20px] ml-[3px]' > World Model Hunt</h1>
                     </div>
-                    
                     {menu && <button onClick={handlehumber} className='absolute bg-white rounded-full -right-6 top-7 '><FaArrowCircleLeft size={35} /></button>}
                     {!menu&&<button onClick={handlehumber} className='absolute bg-white rounded-full -right-[80px] top-7 '><FaArrowCircleRight size={35} /> </button>}
                 </div>
