@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { LuInbox } from "react-icons/lu";
-import { RxDropdownMenu } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { IoIosNotificationsOutline } from "react-icons/io";
@@ -60,16 +59,16 @@ const Sidebar = () => {
                     {!menu&&<button onClick={handlehumber} className='absolute bg-white rounded-full -right-[80px] top-7 '><FaArrowCircleRight size={35} /> </button>}
                 </div>
                 <div className= 'w-[100%]'>
-                    <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
+                    <button className='flex items-center w-[100%] text-center text-lg p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                         <MdOutlineDashboardCustomize />
-                        Dashboard
+                        <p className='ml-1 mr-[100px]'>Dashboard</p>
                     </button>
-                    <button className='flex items-center w-[100%] text-center text-sm p-2 active:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700' onClick={productDropdown}>
+                    <button className='flex items-center w-[100%] text-center text-lg p-2 active:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700' onClick={productDropdown}>
                         <LuInbox />
                         <p className='ml-1 mr-[100px]'>Products</p>
                         {clickDown? <FaAngleUp />:<FaAngleDown />}
                     </button>
-                    <div className={` ml-5 overflow-hidden transition-all duration-700 ${clickDown ? 'h-[100px]':'h-[0px]'} `} >
+                    <div className={` ml-5 overflow-hidden transition-all duration-700 ${clickDown ? 'h-[120px]':'h-[0px]'} `} >
                           {
                            yearData.map((item,idx)=>(
                             <Link to='/' state={{ data:item }} >
@@ -86,15 +85,15 @@ const Sidebar = () => {
                 </div>
                 <hr className='mt-12' />
                 <div className='pt-8'>
-                    <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
+                    <button className='flex items-center w-[100%] text-center text-md p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                         <IoIosNotificationsOutline />
                         <p className='ml-1 mr-[80px]'>Notifications</p>
                     </button>
-                    <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
+                    <button className='flex items-center w-[100%] text-center text-md p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                         <CiSettings />
                         <p className='ml-1 mr-[80px]'>Settings</p>
                     </button>
-                    <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
+                    <button className='flex items-center w-[100%] text-center text-md p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                         <IoIosInformationCircleOutline />
                         <p className='ml-1 mr-[80px]'>Support</p>
                     </button>
