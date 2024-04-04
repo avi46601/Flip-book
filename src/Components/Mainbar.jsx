@@ -5,6 +5,7 @@ import imageLinks from '../../public/image';
 import { useState } from "react";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Sidebar from './Sidebar';
 const Mainbar = () => {
     const { state } = useLocation();
     const [currentPage, setCurrentPage] = useState(1);
@@ -24,11 +25,13 @@ const Mainbar = () => {
         setCurrentPage(prevPage => (prevPage === 1 ? prevPage : prevPage - 1));
     };
     return (
+        <>
+        <Sidebar />
         <div className='w-[100%] bg-slate-100 '>
             <div className='mt-9 mb-7 mx-14 flex justify-between'>
                 <h2 className='text-2xl font-bold mx-20'> Magazine <span className='text-red-800'>{state.month}</span></h2>
-                <div className='bg-white sm:w-[500px] w-[200px] h-9 rounded-lg py-1'>
-                    <input className='w-[95%] px-2 focus:outline-none' type="text" placeholder='Search Page' />
+                <div className='bg-white sm:w-[500px] w-[200px] h-9 rounded-lg py-1 flex'>
+                    <input className='w-[95%] px-2 focus:outline-none items-center' type="text" placeholder='Search Page' />
                     <button className='mt-1' ><IoSearch size={'20px'} /></button>
                 </div>
             </div>
@@ -56,6 +59,8 @@ const Mainbar = () => {
                 <button className='w-[150px] p-2 bg-slate-400 hover:bg-slate-700 hover:text-white rounded-md'>View More</button>
             </div> */}
         </div>
+        </>
+        
     )
 }
 
