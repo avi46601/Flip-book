@@ -2,11 +2,15 @@ import React from 'react'
 import Img from '../assets/month.jpg'
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import Sidebar from './Sidebar';
 const Monthlist = () => {
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const { state } = useLocation();
     return (
+        <>
+        <Sidebar/>
         <div className='w-[100%] '>
+            
             <h1 className='text-center mx-6 my-[30px] text-[30px] font-bold'>Magazine <span className='text-red-800'>{state?.data ?? '2024'}</span> </h1>
             <div className='flex flex-wrap justify-center gap-7 px-10'>
                 {
@@ -24,6 +28,8 @@ const Monthlist = () => {
                 }
             </div>
         </div>
+        </>
+        
     )
 }
 
