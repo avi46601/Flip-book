@@ -72,7 +72,7 @@ const Sidebar = () => {
                             <Link to='/' state={{ data:item }} >
                                 <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                                     <SlCalender />
-                                    <p className='ml-1 mr-[100px]'>{item}</p>
+                                    <p className='ml-1 mr-[100px]'>2024</p>
                                     <FaArrowRight />
                                 </button>
                             </Link>
