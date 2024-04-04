@@ -9,9 +9,11 @@ import { CiSettings } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Sidebar = () => {
     
-    const [menu,setMenu]=useState(true);
+    const [menu,setMenu]=useState(false);
+    const yearData=['2024','2023','2022'];
     const [ScreenSize ,setScreenSize]=useState(window.innerWidth)
     const handlehumber=()=>{
        setMenu(!menu)
@@ -34,7 +36,7 @@ const Sidebar = () => {
          }
    },[ScreenSize])
     return (
-        <div className={`h-screen flex relative  ${menu ? 'ml-0' : '-ml-64'} transition-all duration-100`} >
+        <div className={`h-screen flex relative  ${menu ? 'ml-0' : '-ml-64'} transition-all duration-1000`} >
             <div className='relative border rounded-r-[20px] h-[100vh] w-[250px] p-2 bg-white'>
                 <div className=' relative text-center p-[10px] mb-5'>
                     <h1 className='font-bold text-[22px]' > World Model Hunt</h1>
@@ -52,27 +54,18 @@ const Sidebar = () => {
                         <RxDropdownMenu />
                     </button>
                     <div className='ml-3'>
-                            <div>
+                          {
+                           yearData.map((item,idx)=>(
+                            <Link to='/' state={{ data:item }} >
                                 <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
                                     <SlCalender />
-                                    <p className='ml-1 mr-[100px]'>2024</p>
+                                    <p className='ml-1 mr-[100px]'>{item}</p>
                                     <FaArrowRight />
                                 </button>
-                            </div>
-                            <div>
-                                <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
-                                    <SlCalender />
-                                    <p className='ml-1 mr-[100px]'>2023</p>
-                                    <FaArrowRight />
-                                </button>
-                            </div>
-                            <div>
-                                <button className='flex items-center w-[100%] text-center text-sm p-2 hover:bg-[#ede9fe] hover:rounded-xl hover:text-blue-700'>
-                                    <SlCalender />
-                                    <p className='ml-1 mr-[100px]'>2022</p>
-                                    <FaArrowRight />
-                                </button>
-                            </div>
+                            </Link>
+                           ))
+                          }
+                            
                         </div>
                 </div>
                 <hr className='mt-12' />
