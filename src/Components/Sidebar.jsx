@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { LuInbox } from "react-icons/lu";
 import { RxDropdownMenu } from "react-icons/rx";
@@ -12,12 +12,29 @@ import { FaArrowCircleRight } from "react-icons/fa";
 const Sidebar = () => {
     
     const [menu,setMenu]=useState(true);
-    const [slideIcon ,setslideIcon]=useState(false)
+    const [ScreenSize ,setScreenSize]=useState(window.innerWidth)
     const handlehumber=()=>{
        setMenu(!menu)
     }
+   useEffect(()=>{
+    const handleResize=()=>{
+        setScreenSize(window.innerWidth);
+    }
+    window.addEventListener('resize',handleResize);
+    return ()=>{
+        window.removeEventListener('resize',handleResize);
+    } 
+   },[]);
+   useEffect(()=>{
+         if(ScreenSize<600){
+            setMenu(!menu)
+         }
+         else if(ScreenSize>=600){
+            setMenu(!menu)
+         }
+   },[ScreenSize])
     return (
-        <div className={`h-screen flex  ${menu ? 'ml-0' : '-ml-64'} transition-all duration-300`} >
+        <div className={`h-screen flex relative  ${menu ? 'ml-0' : '-ml-64'} transition-all duration-100`} >
             <div className='relative border rounded-r-[20px] h-[100vh] w-[250px] p-2 bg-white'>
                 <div className=' relative text-center p-[10px] mb-5'>
                     <h1 className='font-bold text-[22px]' > World Model Hunt</h1>
