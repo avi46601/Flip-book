@@ -1,0 +1,92 @@
+/* General styles */
+.heading h1 {
+    
+    font-size: 30px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    
+}
+
+
+.input {
+    text-align: center;
+    height: 30px;
+    
+}
+
+.label {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+#countrySelect {
+    height: 40px;
+    max-width: 100%; /* Ensure select width doesn't exceed parent width */
+    width: 400px; /* Default width for larger screens */
+    text-align: center;
+    border: solid black;
+}
+
+.button {
+    margin-top: 20px; /* Reduce margin for smaller screens */
+    text-align: center;
+}
+
+#input {
+    border: 2px solid black;
+    width: 350px; /* Default width for larger screens */
+    text-align: center;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Adjust styles for screens smaller than 768px */
+    .heading h1 {
+        font-size: 24px; /* Decrease font size */
+        padding-top: 20px; /* Reduce padding */
+        padding-bottom: 20px; /* Reduce padding */
+    }
+
+    #countrySelect {
+        width: 100%; /* Make select full width */
+        max-width: 300px; /* Set maximum width */
+    }
+
+    #input {
+        width: 100%; /* Make input full width */
+        max-width: 200px; /* Set maximum width */
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 1024px) {
+    /* Adjust heading font size and padding */
+    .heading h1 {
+        font-size: 26px; /* Decrease font size */
+        padding-top: 25px; /* Reduce padding */
+        padding-bottom: 25px; /* Reduce padding */
+    }
+
+    /* Make countrySelect full width with maximum width */
+    #countrySelect {
+        width: 100%; /* Make select full width */
+        max-width: 400px; /* Set maximum width */
+    }
+
+    /* Make input full width with maximum width */
+    #input {
+        width: 100%; /* Make input full width */
+        max-width: 400px; /* Set maximum width */
+        
+    }
+
+    /* Reduce margin for button */
+    .button {
+        margin-top: 15px; /* Reduce margin */
+    }
+}
