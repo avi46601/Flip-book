@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoSearch } from "react-icons/io5";
-import Img from '../assets/magzine.jpg'
+`import Img from '../assets/magzine.jpg'`
 import { useLocation } from 'react-router-dom';
 const Mainbar = () => {
     const data = [{number: 1,imgsrc: Img },{number: 1,imgsrc: Img },{number: 1,imgsrc: Img },{number: 1,imgsrc: Img },{number: 1,imgsrc: Img },{number: 1,imgsrc: Img }]
