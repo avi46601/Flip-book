@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react'
-import Sidebar from './Components/Sidebar'
+
 import Mainbar from './Components/Mainbar'
 import Monthlist from './Components/monthlist'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -18,7 +18,7 @@ function App() {
           <Route path='/magazines' element={<MagazinePage />} />
         </Routes>
         <div className='flex bg-slate-100'>
-          {/* <Sidebar /> */}
+
           <Routes>
             <Route path='/' element={<Monthlist />} ></Route>
             <Route path='/month' element={<Mainbar />}></Route>
