@@ -38,11 +38,11 @@ function Navbar() {
                             </svg>
                         </button>
                     </div>
-                    <div className={`hidden lg:flex ${isMenuOpen ? 'flex' : 'hidden'}`}>
+                    <div className={`hidden lg:flex ${isMenuOpen ? 'flex  justify-between items-center' : 'hidden'}`}>
                         <Link to="/read" className="mx-3 text-gray-600 hover:text-gray-900">Read</Link>
+                        <Link to="/dashboard" className="mx-3 text-gray-600 hover:text-gray-900">Dashboard</Link>
                         <Link to="/picture" className="mx-3 text-gray-600 hover:text-gray-900">Feature</Link>
-                        <a href="#" className="mx-3 text-gray-600 hover:text-gray-900">Login</a>
-                        <button className="mx-3 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">SIGN UP</button>
+                        <Link to="/signin" className="mx-3  bg-blue-500 text-white font-bold py-2 px-4 rounded ">Login</Link>
                     </div>
                 </div>
             </div>
@@ -50,8 +50,8 @@ function Navbar() {
                 <div className="px-2 pt-2 pb-3 space-y-1">
                     <Link to="/read" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={toggleMenu}>Read</Link>
                     <Link to="/picture" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={toggleMenu}>Feature</Link>
-                    <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" onClick={toggleMenu}>Login</a>
-                    <button className="block w-full px-4 py-2 bg-green-500 text-white rounded-md mt-2 hover:bg-green-600 focus:outline-none focus:bg-green-600" onClick={toggleMenu}>SIGN UP</button>
+                    <Link to="/signin" className="mx-3  bg-blue-500 text-white font-bold py-2 px-4 rounded ">Login</Link>
+                    
                 </div>
             </div>
         </nav>
